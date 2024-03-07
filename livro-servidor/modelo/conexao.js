@@ -1,9 +1,13 @@
 const banco = require("mongoose");
 
-const options = { useUnifiedTopology: true, useNewUrlParser: true };
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  dbName: "livraria",
+};
 
 banco
-  .connect("mongodb://localhost:27017/?directConnection=true")
+  .connect("mongodb://localhost:27017/?directConnection=true", options)
   .then(() => {
     console.log("Conectado ao MongoDB");
   })
